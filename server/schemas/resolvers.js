@@ -4,8 +4,8 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
-    user: async (parent, { user }) => {
-      return User.findById(user._id);
+    user: async (parent, { username }) => {
+      return User.findOne( { username });
     },
   },
 
@@ -38,7 +38,7 @@ const resolvers = {
           { _id: user._id },
           {
             $addToSet: {
-              comments: { savedBooks: bookId },
+              comments: { savedBooks: bookId, authors, description, title, image, link },
             },
           },
           {

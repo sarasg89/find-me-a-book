@@ -8,20 +8,24 @@ For this project, I took a fully functioning Google Books API search engine buil
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
 - [Deployed application](#deployed-application)
 - [Screenshots](#screenshots)
 - [Credits](#credits)
 - [License](#license)
 
-## Installation
-
-## Usage
-
 ## Deployed application
 
+This application has been deployed on Heroku. Please check it out [here](https://find-me-a-book.herokuapp.com/).
+
 ## Screenshots
+
+![Screenshot of the application](./assets/screenshots/search.png)
+
+![Screenshot of the application](./assets/screenshots/login.png)
+
+![Screenshot of the application](./assets/screenshots/save2.png)
+
+![Screenshot of the application](./assets/screenshots/delete.png)
 
 ## Credits
 

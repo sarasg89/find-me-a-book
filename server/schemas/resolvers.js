@@ -4,8 +4,12 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
-    user: async (parent, { username }) => {
-      return User.findOne( { username });
+    user: async (parent, args, context) => {
+      if (context.user) {
+        const userData = await User.findOne({ _id: context.user._id });
+        return userData;
+      }
+      throw new AuthenticationError("Not logged in");
     },
   },
 
@@ -54,7 +58,7 @@ const resolvers = {
         return User.findOneAndUpdate(
           { _id: user._id },
           {
-            $pull: { savedBooks: {_id:_id} },
+            $pull: { savedBooks: { _id: _id } },
           },
           { new: true }
         );
